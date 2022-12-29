@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "stdlib.h": "c",
+        "derivatives.h": "c",
+        "stdio.h": "c",
+        "common.h": "c",
+        "gradient.h": "c",
+        "time.h": "c",
+        "activation.h": "c"
+    }
+}
