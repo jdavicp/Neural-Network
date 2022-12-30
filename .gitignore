@@ -1,5 +1,5 @@
 
 /bin
 /.vscode
-/tensor
-/linear_operations
+/src/core/tensor
+/src/core/linear_operations
