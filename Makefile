@@ -1,10 +1,15 @@
-sources := ./src/cmd/main.c ./src/core/gradient_descent/gradient.c ./src/core/numerical_derivative/derivatives.c
+SOURCES := $(shell find . -name *.c)
 FLAGS := -Wall -Wextra -pedantic -Wfloat-conversion -Werror -Wconversion -Wunreachable-code  -lm
-binary := $(wildcard bin/*.exe)
+BINARY := $(wildcard ./bin/*.c)
+CURRENT_DIR := $(notdir $(shell pwd))
+
 build:
-	clang $(sources) -o $(binary) $(FLAGS) 
+	gcc $(SOURCES) -o ./bin/$(CURRENT_DIR) $(FLAGS) 
 run:
 	./bin/neural_network.exe
 
 clear:
-	del \f $(binary)
+	rm -f $(BINARY)
+
+debug:
+	echo $(CURRENT_DIR)
