@@ -1,1 +1,5 @@
+
 /bin
+/.vscode
+/tensor
+/linear_operations

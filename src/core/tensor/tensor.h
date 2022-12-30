@@ -2,6 +2,13 @@
 #define __TENSOR_H__
 #include "../common.h"
 
-float64 **tensor64(float64 **values);
+struct Matrix
+{
+    size_t row;
+    size_t column;
+
+    float64 **matrix;
+};
+
 
 #endif
