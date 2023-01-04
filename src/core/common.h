@@ -1,6 +1,7 @@
 #ifndef __COMMON_HEADERS_H__
 #define __COMMON_HEADERS_H__
 #include <stdlib.h>
+#include <math.h>
 
 
 typedef float float32;

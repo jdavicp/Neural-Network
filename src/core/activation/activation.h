@@ -1,7 +1,5 @@
 #ifndef __ACTIVATION_H__
 #define __ACTIVATION_H__
-#include "../common.h"
-#include <math.h>
 
 enum ActivationFunction {
     ReLU = 0,
