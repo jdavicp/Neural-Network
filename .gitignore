@@ -2,4 +2,4 @@
 /bin
 /.vscode
 /src/core/tensor
-/src/core/linear_operations
+/test

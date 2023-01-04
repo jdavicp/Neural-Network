@@ -1,5 +1,3 @@
-#include "../common.h"
-#include "../activation/activation.h"
 #include "perceptron.h"
 
 float64 perceptron(float64 *values, float64 *weights, size_t *shape,enum ActivationFunction activation)

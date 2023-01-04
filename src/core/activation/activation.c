@@ -1,4 +1,3 @@
-#include "../common.h"
 #include "activation.h"
 
 float64 switch_activation(enum ActivationFunction activation, float64 x)

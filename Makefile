@@ -6,7 +6,7 @@ CURRENT_DIR := $(notdir $(shell pwd))
 build:
 	gcc $(SOURCES) -o ./bin/$(CURRENT_DIR) $(FLAGS) 
 run:
-	./bin/neural_network.exe
+	./bin/$(CURRENT_DIR)
 
 clear:
 	rm -f $(BINARY)

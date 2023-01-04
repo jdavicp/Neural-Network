@@ -42,6 +42,12 @@ struct Shape
     const size_t row;
     const size_t col;
 };
+float64 **dot_product(
+    struct Shape m1_shape,
+     float64 m1[m1_shape.row][m1_shape.col], 
+     struct Shape m2_shape, 
+     float64 m2[m2_shape.row][m2_shape.col] 
+    );
 
 int main(void)
 {
@@ -49,17 +55,17 @@ int main(void)
     const struct Shape m2_shape = {2, 4};
     const struct Shape m3_shape = {m1_shape.row, m2_shape.col};
 
-    int m1[3][2] = {{3, 4}, {2, 1}, {0, 8}};
-    int m2[2][4] = {{1, 2, 3, 4}, {5, 2, 7, 0}};
-    int m3[m3_shape.row][m3_shape.col];
+    float64 m1[3][2] = {{3, 4}, {2, 1}, {0, 8}};
+    float64 m2[2][4] = {{1, 2, 3, 4}, {5, 2, 7, 0}};
+    float64 **m3;
 
-    //m3 = dot_product(m1, m2, m1_shape, m2_shape);
+    m3 = dot_product(m1_shape, m1, m2_shape, m2);
 
     for(size_t i = 0; i < m3_shape.row; i++)
     {
         for(size_t j = 0; j < m3_shape.col; j++)
         {
-            printf("%d",m3[i][j]);
+            printf("%f\t",m3[i][j]);
         }
         printf("\n");
     }
@@ -67,7 +73,12 @@ int main(void)
 
 }
 
-float64 **dot_product(float64 **m1, float64 **m2, struct Shape m1_shape, struct Shape m2_shape)
+float64 **dot_product(
+    struct Shape m1_shape,
+     float64 m1[m1_shape.row][m1_shape.col], 
+     struct Shape m2_shape, 
+     float64 m2[m2_shape.row][m2_shape.col] 
+    )
 {
     if(m1_shape.col != m2_shape.row)
     {
@@ -75,7 +86,12 @@ float64 **dot_product(float64 **m1, float64 **m2, struct Shape m1_shape, struct 
     }
 
     const struct Shape m3_shape = {m1_shape.row, m2_shape.col};
-    int m3[m3_shape.row][m3_shape.col];
+    float64 **m3 = (float64**)malloc(m3_shape.row*sizeof(float64*));
+
+    for(size_t i = 0; i < m3_shape.row; i++)
+    {
+        m3[i] = (float64*)malloc(m3_shape.col*sizeof(float64));
+    }
 
     for(size_t i = 0; i < m3_shape.row; i++)
     {

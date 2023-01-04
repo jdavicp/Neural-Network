@@ -1,6 +1,6 @@
 #ifndef __ACTIVATION_H__
 #define __ACTIVATION_H__
-
+#include "../common.h"
 enum ActivationFunction {
     ReLU = 0,
     Sigmoid = 1,
